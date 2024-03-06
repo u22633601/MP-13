@@ -21,7 +21,7 @@ A description of what this application is about will go here
 Please navigate to <a href="">twitter clone</a> to use the application
 
 ## I am part of the team
-Please see <a href="contributing">contributing</a> for more details on how you can contribute to this repo
+Please see <a href="CONTRIBUTING.md">contributing</a> for more details on how you can contribute to this repo
 
 ## I am an external developer and I want to try the app
 

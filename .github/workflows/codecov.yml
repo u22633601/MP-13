@@ -1,0 +1,7 @@
+steps:
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        fail_ci_if_error: true
+        files: ./codecov/coverage.xml  # Path to your coverage report file
+        token: ${{ secrets.CODECOV_TOKEN }}  # Your Codecov token
