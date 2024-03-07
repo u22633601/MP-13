@@ -1,7 +1,7 @@
 # Twitter clone - By MP-13
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=twitter" />
+    <img src="https://skillicons.dev/icons?i=twitter&theme=light" />
   </a>
 </p>
 <p align="center">
@@ -16,6 +16,7 @@
 ![Codecov](https://img.shields.io/codecov/c/github/u22633601/MP-13?style=flat-square)
 ![GitHub License](https://img.shields.io/github/license/u22633601/MP-13?style=flat-square)
 ![GitHub repo size](https://img.shields.io/github/repo-size/u22633601/MP-13?style=flat-square)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/u22633601/MP-13/.github%2Fworkflows%2Ftest.yml?style=flat-square)
 
 </p>
 
@@ -40,14 +41,14 @@ A description of what this application is about will go here
 # Tech stack
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=cypress,figma,jest,md,npm,postgres,react,supabase,ts,vercel,vite&perline=5" />
+    <img src="https://skillicons.dev/icons?i=cypress,figma,md,npm,postgres,react,supabase,ts,vercel,vite,vitest&perline=5&theme=light" />
   </a>
 </p>
 
 # Version control and CI/CD
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=git,github,githubactions" />
+    <img src="https://skillicons.dev/icons?i=git,github,githubactions&theme=light" />
   </a>
 </p>
 
@@ -65,6 +66,7 @@ Please see <a href="CONTRIBUTING.md">contributing</a> for more details on how yo
 ```npm install```.
 3. Start up a development server and navigate to the appropriate port:
 ```npm run dev```
+4. To run tests, run ```npm run tests```
 
 # The team
 
