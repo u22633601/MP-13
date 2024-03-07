@@ -1,12 +1,33 @@
 # Twitter clone - By MP-13
-///Badges related to the app can go here
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=twitter" />
+  </a>
+</p>
+<p align="center">
+  <a href="">project board</a>
+  |
+  <a href="">documentation</a>
+</p>
 
+<p align="center">
+
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/u22633601/MP-13?style=flat-square)
+![Codecov](https://img.shields.io/codecov/c/github/u22633601/MP-13?style=flat-square)
+![GitHub License](https://img.shields.io/github/license/u22633601/MP-13?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/u22633601/MP-13?style=flat-square)
+
+</p>
+
+///Badges related to the app can go here <br>
 ///Kyles figma design can go here or a screenshot of the actual web app.
 
 # Table of content
 - [Twitter clone - By MP-13](#twitter-clone---by-mp-13)
 - [Table of content](#table-of-content)
 - [Summary](#summary)
+- [Tech stack](#tech-stack)
+- [Version control and CI/CD](#version-control-and-cicd)
 - [Users](#users)
   - [I am just checking out the application](#i-am-just-checking-out-the-application)
   - [I am part of the team](#i-am-part-of-the-team)
@@ -15,6 +36,20 @@
 
 # Summary
 A description of what this application is about will go here
+
+# Tech stack
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=cypress,figma,jest,md,npm,postgres,react,supabase,ts,vercel,vite&perline=5" />
+  </a>
+</p>
+
+# Version control and CI/CD
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=git,github,githubactions" />
+  </a>
+</p>
 
 # Users
 ## I am just checking out the application
