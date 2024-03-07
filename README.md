@@ -66,7 +66,9 @@ Please see <a href="CONTRIBUTING.md">contributing</a> for more details on how yo
 ```npm install```.
 3. Start up a development server and navigate to the appropriate port:
 ```npm run dev```
-4. To run tests, run ```npm run tests```
+4. To close the development server run
+```CTRL-C```
+5. To run tests, run ```npm run tests```
 
 # The team
 
