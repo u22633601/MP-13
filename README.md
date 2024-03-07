@@ -1,13 +1,13 @@
 # Twitter clone - By MP-13
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=twitter&theme=light" />
+    <img src="/public/twitter.svg" />
   </a>
 </p>
 <p align="center">
-  <a href="">project board</a>
+  <a href="https://github.com/users/u22633601/projects/1">project board</a>
   |
-  <a href="">documentation</a>
+  <a href="https://github.com/u22633601/MP-13/wiki">documentation</a>
 </p>
 
 <p align="center">
