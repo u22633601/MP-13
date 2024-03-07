@@ -1,4 +1,4 @@
-Components should live here wit this structure
+Components should live here with this structure
 
 /Card
     |-> Card.tsx, Card.test.ts, Card.css/ Card.scss
