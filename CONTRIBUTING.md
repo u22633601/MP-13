@@ -12,17 +12,26 @@ If you have encountered an bug during usage of this application or whilst develo
 
 If you have a feature idea and you would like to pitch it, please create an feature request by clicking <a href="">here</a>
 
+## Our branching strategy
+
+![Git trunk based strategy!](/images/GitFlow_trunk.png "Git trunk based strategy")
+image source: https://blog.mergify.com/trunk-based-development-vs-git-flow-when-to-use-which-development-style/
+
 ## Submitting a pull request
 
 1. Clone the repository.
 2. Configure and install the dependencies:
 ```npm install```.
-3. Make sure the tests pass on your machine: ```npm test```, note: these tests also apply the linter, so there's no need to lint separately.
-4. Create a new branch: `git checkout -b my-branch-name`. Please note that your branch name should not be a 'named' branch but rather a feature based branch so that other developers are able to tell what it does without having to constantly ask you. Please make the name as descriptive as possible for what it is doing.
-5. Make your change, add <a href="">tests(following this model)</a>, and make sure all the tests still pass.
-6. Push to your branch and open a pull request to the dev branch. In your pull request description, please describe what it is you have changed. A simple template to build upon for pull requests is available <a href="pull_request_template.md">here</a>
-7. Pat your self on the back and wait for your pull request to be reviewed and merged😄.
-8. In some cases, your code may be rejected and you may thus need to fix your code before pushing to your pull request.
+3. Make sure the tests pass on your machine: 
+```npm test```
+, note: these tests also apply the linter, so there's no need to lint separately.
+1. Switch to develop and create a new branch from develop: 
+```git checkout -b feature-name``` 
+Please note that your branch name should not be a 'named' branch but rather a feature based branch so that other developers are able to tell what it does without having to constantly ask you. Please make the name as descriptive as possible for what it is doing. You can also create the branch using the web-gui on github.
+1. Make your change, add <a href="">tests(following this model)</a>, and make sure all the tests still pass.
+2. Push to your branch and open a pull request to the dev branch. In your pull request description, please describe what it is you have changed. A simple template to build upon for pull requests is available <a href="pull_request_template.md">here</a>. Please reference <a href="https://www.markdownguide.org/basic-syntax/#overview">this</a> to write the correct markdown syntax
+3. Pat your self on the back and wait for your pull request to be reviewed and merged😄.
+4. In some cases, your code may be rejected and you may thus need to fix your code before pushing to your pull request.
 
 Here are a few things you can do that will increase the likelihood of your pull request being accepted:
 
