@@ -1,11 +1,31 @@
 /* SignIn.css */
+div {
+  margin-top: 0;
+}
+.pageContainer {
+  display: flex;
+  margin-top: 0;
+}
+
+.imageContainer {
+  flex: 1;
+  /* Adjust width and styling of the image container as needed */
+  margin-top: 0;
+}
+
+.imageContainer div {
+  margin-top: 0;
+}
+
+
 .signInContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
   
   h2 {
     margin-bottom: 20px;
@@ -24,4 +44,35 @@
   
   .signInContainer a:hover {
     background-color: #0056b3;
+  }
+
+  .terms a {
+    all: initial; /* Reset all properties */
+    color: #007BFF;
+    cursor: pointer;
+  }
+
+  .terms a:hover {
+    all: initial; /* Reset all properties */
+    color: #0056b3;
+    cursor: pointer;
+  }
+
+  .login a {
+    all: initial; /* Reset all properties */
+    color: #007BFF;
+    cursor: pointer;
+  }
+
+  .login a:hover {
+    all: initial; /* Reset all properties */
+    color: #0056b3;
+    cursor: pointer;
+  }
+
+  .login {
+    position: fixed;
+    bottom: 0;
+    padding: 20px;
+    text-align: center;
   }
