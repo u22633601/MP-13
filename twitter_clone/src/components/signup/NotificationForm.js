@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 
 const NotificationForm = ({ onSubmit }) => {
-  const [notificationPreferences, setNotificationPreferences] = useState({
-    email: false,
-    push: false,
-  });
+  const [notificationPreferences, setNotificationPreferences] = useState(false);
 
-  const handlePreferenceChange = (e) => {
-    const { name, checked } = e.target;
-    setNotificationPreferences((prev) => ({
-      ...prev,
-      [name]: checked,
-    }));
+  const handlePreferenceChange = () => {
+    setNotificationPreferences(prev => !prev); // Toggle the boolean value
   };
 
   const handleSubmit = (e) => {
@@ -21,26 +14,18 @@ const NotificationForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Notification Preferences</h2>
+      <small>Notification symbol here</small>
+      <h2>Turn on notifications</h2>
+      <p>Get the most out of Twitter by staying up to date with what's happening.</p>
       <label>
         <input
           type="checkbox"
-          name="email"
-          checked={notificationPreferences.email}
+          checked={notificationPreferences}
           onChange={handlePreferenceChange}
         />
-        Receive Email Notifications
+        Allow notifications
       </label>
-      <label>
-        <input
-          type="checkbox"
-          name="push"
-          checked={notificationPreferences.push}
-          onChange={handlePreferenceChange}
-        />
-        Receive Push Notifications
-      </label>
-      <button type="submit">Submit</button>
+      <button type="submit">Skip for now</button>
     </form>
   );
 };

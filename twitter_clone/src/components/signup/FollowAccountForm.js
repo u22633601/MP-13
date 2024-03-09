@@ -19,7 +19,11 @@ const FollowAccountForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Follow Accounts</h2>
+      <h2>Don't miss out</h2>
+      <p>When you follow someone, you'll see their Tweets in your Timeline.
+        You'll also get more relevant recommendations.
+      </p>
+      <h3>Follow 1 or more accounts</h3>
       <label>
         <input
           type="checkbox"
@@ -47,7 +51,7 @@ const FollowAccountForm = ({ onSubmit }) => {
         />
         Google
       </label>
-      <button type="submit">Submit</button>
+      <button type="submit" disabled={accounts < 1}>Next</button>
     </form>
   );
 };

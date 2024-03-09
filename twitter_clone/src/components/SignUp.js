@@ -78,8 +78,7 @@ const SignUp = () => {
 
   // If sign-up process is complete, navigate back to the sign-in page
   if (signUpComplete) {
-    navigate('/');
-    return null; // Render nothing, as navigation will take place
+    navigate('/'); // Render nothing, as navigation will take place
   }
 
   // Render the appropriate form based on the current step
@@ -98,7 +97,7 @@ const SignUp = () => {
       formComponent = <ProfilePhotoForm onSubmit={handlePhotoSubmit} />;
       break;
     case 5:
-      formComponent = <UsernameForm onSubmit={handleUsernameSubmit} />;
+      formComponent = <UsernameForm onSubmit={handleUsernameSubmit} formData={formData} />;
       break;
     case 6:
       formComponent = <NotificationForm onSubmit={handleNotificationFormSubmit} />;

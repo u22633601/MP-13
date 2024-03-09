@@ -19,7 +19,11 @@ const SubInterestForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Select Sub-Interests</h2>
+      <h2>What do you want to see on Twitter?</h2>
+      <p>
+        Interests are used to personalize your experience and will be 
+        visible on your profile.
+      </p>
       <label>
         <input
           type="checkbox"
@@ -47,7 +51,7 @@ const SubInterestForm = ({ onSubmit }) => {
         />
         Rock Music
       </label>
-      <button type="submit">Submit</button>
+      <button type="submit">Next</button>
     </form>
   );
 };
