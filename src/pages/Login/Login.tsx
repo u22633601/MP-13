@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { supabase } from "@config/supabase";
+import { loggedInUserStore } from '@store/index';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userData, setUserData] = useState(null); // State to store user data
+  const {userData, loginUser} = loggedInUserStore((state) => { return { userData: state.user, loginUser: state.loginUser}; });
 
-  const handleSubmit = async (event) => {
+
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    const { user, error } = await supabase.auth.signInWithPassword({
+    const res = await supabase.auth.signInWithPassword({
       email,
       password,
     });
 
-    if (error) {
-      console.error('Error logging in:', error.message);
+    if (res.error) {
+      console.error('Error logging in:', res.error.message);
     } else {
-      console.log('User logged in:', user);
-      setUserData(user); // Update user data state
+      console.log('User logged in:', res.data.user);
+      loginUser(res.data.user); // Update user data state
     }
   };
 

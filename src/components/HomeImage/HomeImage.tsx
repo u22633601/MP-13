@@ -1,4 +1,3 @@
-import React from 'react';
 import './HomeImage.css';
 import { twitter } from '@assets/index';
 
