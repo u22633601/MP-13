@@ -3,7 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import SignUpForm from './signup/SignUpForm'; // Component for entering basic information
 import VerificationCodeForm from './signup/VerificationCodeForm'; // Component for entering verification code
 import PasswordForm from './signup/PasswordForm'; // Component for entering password
+import ProfilePhotoForm from './signup/ProfilePhotoForm'; // Component for uploading profile photo
 import UsernameForm from './signup/UsernameForm'; // Component for entering username
+import NotificationForm from './signup/NotificationForm'; // Component for setting notification preferences
+import InterestForm from './signup/InterestForm'; // Component for selecting interests
+import SubInterestForm from './signup/SubInterestForm'; // Component for selecting sub-interests
+import FollowAccountForm from './signup/FollowAccountForm'; // Component for following accounts
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -33,12 +38,43 @@ const SignUp = () => {
     setStep(4);
   };
 
+  const handlePhotoSubmit = (photo) => {
+    // Handle photo submission logic
+    console.log('Profile photo:', photo);
+    // Move to the next step (username form)
+    setStep(5);
+  };
+
   const handleUsernameSubmit = (username) => {
     // Handle username submission logic
     console.log('Username:', username);
     // Set sign-up process as complete
-    setSignUpComplete(true);
+    setStep(6);
   };
+
+  const handleNotificationFormSubmit = (notificationPreferences) => {
+    console.log('Notification preferences:', notificationPreferences);
+    // Move to the next step (interest form)
+    setStep(7);
+  }
+
+  const handleInterestSubmit = (interests) => {
+    console.log('Interests:', interests);
+    // Move to the next step (sub-interest form)
+    setStep(8);
+  }
+
+  const handleSubInterestSubmit = (subInterests) => {
+    console.log('Sub-interests:', subInterests);
+    // Move to the next step (notification form)
+    setStep(9);
+  }
+
+  const handleFollowAccountSubmit = (accounts) => {
+    console.log('Accounts:', accounts);
+    // Set sign-up process as complete
+    setSignUpComplete(true);
+  }
 
   // If sign-up process is complete, navigate back to the sign-in page
   if (signUpComplete) {
@@ -59,7 +95,22 @@ const SignUp = () => {
       formComponent = <PasswordForm onSubmit={handlePasswordSubmit} />;
       break;
     case 4:
+      formComponent = <ProfilePhotoForm onSubmit={handlePhotoSubmit} />;
+      break;
+    case 5:
       formComponent = <UsernameForm onSubmit={handleUsernameSubmit} />;
+      break;
+    case 6:
+      formComponent = <NotificationForm onSubmit={handleNotificationFormSubmit} />;
+      break;
+    case 7:
+      formComponent = <InterestForm onSubmit={handleInterestSubmit} />;
+      break;
+    case 8:
+      formComponent = <SubInterestForm onSubmit={handleSubInterestSubmit} />;
+      break;
+    case 9:
+      formComponent = <FollowAccountForm onSubmit={handleFollowAccountSubmit} />;
       break;
     default:
       formComponent = <SignUpForm onSubmit={handleSignUpSubmit} />;
