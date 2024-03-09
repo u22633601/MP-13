@@ -9,10 +9,12 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1); // State to track the current step of the signup process
   const [signUpComplete, setSignUpComplete] = useState(false); // State to track if sign-up process is complete
-
+  const [formData, setFormData] = useState({}); // State to store form data across steps
+  
   const handleSignUpSubmit = (formData) => {
     // Handle sign-up submission logic
     console.log('Sign up form data:', formData);
+    setFormData(formData);
     // Move to the next step (verification code form)
     setStep(2);
   };
@@ -51,7 +53,7 @@ const SignUp = () => {
       formComponent = <SignUpForm onSubmit={handleSignUpSubmit} />;
       break;
     case 2:
-      formComponent = <VerificationCodeForm onSubmit={handleVerificationCodeSubmit} />;
+      formComponent = <VerificationCodeForm formData={formData} onSubmit={handleVerificationCodeSubmit} setStep={setStep} />;
       break;
     case 3:
       formComponent = <PasswordForm onSubmit={handlePasswordSubmit} />;
@@ -65,7 +67,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1>Twitter Sign Up</h1>
       {formComponent}
     </div>
   );
