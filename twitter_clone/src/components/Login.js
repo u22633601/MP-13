@@ -29,17 +29,21 @@ const Login = () => {
 
   return (
     <div>
+      <div className="LogoBox">
+        <img src="./twitter_logo.png" alt="logo" className="logo" />
+        <h2>Sign In to Twitter</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Email : 
-          <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
+        <label> 
+          <input type="email" placeholder="Phone, email, or username" value={email} onChange={e => setEmail(e.target.value)} required />
         </label>
-        <label>
-          Password : 
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
+        <label> 
+          <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required />
         </label>
         <input type="submit" value="Login" />
       </form>
+      <p>
+        Forgot Password? <a>Sign Up</a>
+      </p>
       {userData && ( // Conditionally render user data if available
         <div>
           <h2>User Data:</h2>
@@ -48,6 +52,7 @@ const Login = () => {
           {/* Add more fields as needed */}
         </div>
       )}
+      </div>
     </div>
   );
 };

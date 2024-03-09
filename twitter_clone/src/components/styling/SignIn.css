@@ -2,6 +2,49 @@
 div {
   margin-top: 0;
 }
+
+body {
+  background: #D3D3D3;
+}
+
+.LogoBox {
+  background: #fff;
+  padding: 30px 120px;
+  width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.logo{
+  width: 70px;
+  margin-bottom: 5px;
+}
+
+.LogoBox input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #999;
+  outline: 0;
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+
+.LogoBox p {
+  font-size: 14px;
+  color: #555;
+  margin: 40px 0px 50px;  
+  color: #007BFF;
+}
+
+.LogoBox p a {
+  text-decoration: none;
+  margin-left: 130px;
+}
+
 .pageContainer {
   display: flex;
   margin-top: 0;
@@ -76,3 +119,4 @@ div {
     padding: 20px;
     text-align: center;
   }
+
