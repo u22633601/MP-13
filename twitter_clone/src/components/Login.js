@@ -31,11 +31,11 @@ const Login = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <label>
-          Email:
+          Email : 
           <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
         </label>
         <label>
-          Password:
+          Password : 
           <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
         </label>
         <input type="submit" value="Login" />
