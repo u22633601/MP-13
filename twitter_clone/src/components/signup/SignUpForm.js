@@ -20,8 +20,8 @@ const SignUpForm = ({ onSubmit }) => {
 
     return (
         <div>
-            <h2>Create your account</h2>
             <form onSubmit={handleSubmit}>
+            <h2>Create your account</h2>
                 <label>
                     <span>Name:</span>
                     <input autocapitalize="sentences" autocomplete="name" autocorrect="on" maxlength="50" name="name" spellcheck="true" type="text" dir="auto" value={name} onChange={e => setName(e.target.value)} required />
