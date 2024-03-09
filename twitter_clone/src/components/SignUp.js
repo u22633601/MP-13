@@ -1,54 +1,125 @@
-// SignUp.js
 import React, { useState } from 'react';
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = 'https://onwwwinvmssfezabtusm.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ud3d3aW52bXNzZmV6YWJ0dXNtIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwOTU2NTcxNCwiZXhwIjoyMDI1MTQxNzE0fQ.mOxGCVENYEd-Q0f6c-9YavSrxdLNwW63wcF4Zjp61jg';
-const supabase = createClient(supabaseUrl, supabaseKey);
+import { useNavigate } from 'react-router-dom';
+import SignUpForm from './signup/SignUpForm'; // Component for entering basic information
+import VerificationCodeForm from './signup/VerificationCodeForm'; // Component for entering verification code
+import PasswordForm from './signup/PasswordForm'; // Component for entering password
+import ProfilePhotoForm from './signup/ProfilePhotoForm'; // Component for uploading profile photo
+import UsernameForm from './signup/UsernameForm'; // Component for entering username
+import NotificationForm from './signup/NotificationForm'; // Component for setting notification preferences
+import InterestForm from './signup/InterestForm'; // Component for selecting interests
+import SubInterestForm from './signup/SubInterestForm'; // Component for selecting sub-interests
+import FollowAccountForm from './signup/FollowAccountForm'; // Component for following accounts
 
 const SignUp = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [userData, setUserData] = useState(null); // State to store user data
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const { user, error } = await supabase.auth.signUp({
-      email,
-      password,
-    });
-
-    if (error) {
-      console.error('Error signing up:', error.message);
-    } else {
-      console.log('User signed up:', user);
-      console.log(user);
-      setUserData(user); // Update user data state
-    }
+  const navigate = useNavigate();
+  const [step, setStep] = useState(1); // State to track the current step of the signup process
+  const [signUpComplete, setSignUpComplete] = useState(false); // State to track if sign-up process is complete
+  const [formData, setFormData] = useState({}); // State to store form data across steps
+  
+  const handleSignUpSubmit = (formData) => {
+    // Handle sign-up submission logic
+    console.log('Sign up form data:', formData);
+    setFormData(formData);
+    // Move to the next step (verification code form)
+    setStep(2);
   };
+
+  const handleVerificationCodeSubmit = (verificationCode) => {
+    // Handle verification code submission logic
+    console.log('Verification code:', verificationCode);
+    // Move to the next step (password form)
+    setStep(3);
+  };
+
+  const handlePasswordSubmit = (password) => {
+    // Handle password submission logic
+    console.log('Password:', password);
+    // Move to the next step (username form)
+    setStep(4);
+  };
+
+  const handlePhotoSubmit = (photo) => {
+    // Handle photo submission logic
+    console.log('Profile photo:', photo);
+    // Move to the next step (username form)
+    setStep(5);
+  };
+
+  const handleUsernameSubmit = (username) => {
+    // Handle username submission logic
+    console.log('Username:', username);
+    // Set sign-up process as complete
+    setStep(6);
+  };
+
+  const handleNotificationFormSubmit = (notificationPreferences) => {
+    console.log('Notification preferences:', notificationPreferences);
+    // Move to the next step (interest form)
+    setStep(7);
+  }
+
+  const handleInterestSubmit = (interests) => {
+    console.log('Interests:', interests);
+    // Move to the next step (sub-interest form)
+    setStep(8);
+  }
+
+  const handleSubInterestSubmit = (subInterests) => {
+    console.log('Sub-interests:', subInterests);
+    // Move to the next step (notification form)
+    setStep(9);
+  }
+
+  const handleFollowAccountSubmit = (accounts) => {
+    console.log('Accounts:', accounts);
+    // Set sign-up process as complete
+    setSignUpComplete(true);
+  }
+
+  // If sign-up process is complete, navigate back to the sign-in page
+  if (signUpComplete) {
+    navigate('/');
+    return null; // Render nothing, as navigation will take place
+  }
+
+  // Render the appropriate form based on the current step
+  let formComponent;
+  switch (step) {
+    case 1:
+      formComponent = <SignUpForm onSubmit={handleSignUpSubmit} />;
+      break;
+    case 2:
+      formComponent = <VerificationCodeForm formData={formData} onSubmit={handleVerificationCodeSubmit} setStep={setStep} />;
+      break;
+    case 3:
+      formComponent = <PasswordForm onSubmit={handlePasswordSubmit} />;
+      break;
+    case 4:
+      formComponent = <ProfilePhotoForm onSubmit={handlePhotoSubmit} />;
+      break;
+    case 5:
+      formComponent = <UsernameForm onSubmit={handleUsernameSubmit} />;
+      break;
+    case 6:
+      formComponent = <NotificationForm onSubmit={handleNotificationFormSubmit} />;
+      break;
+    case 7:
+      formComponent = <InterestForm onSubmit={handleInterestSubmit} />;
+      break;
+    case 8:
+      formComponent = <SubInterestForm onSubmit={handleSubInterestSubmit} />;
+      break;
+    case 9:
+      formComponent = <FollowAccountForm onSubmit={handleFollowAccountSubmit} />;
+      break;
+    default:
+      formComponent = <SignUpForm onSubmit={handleSignUpSubmit} />;
+  }
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
-        </label>
-        <label>
-          Password:
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
-        </label>
-        <input type="submit" value="Sign Up" />
-      </form>
-      {userData && ( // Conditionally render user data if available
-        <div>
-          <h2>User Data:</h2>
-          <p>Email: {userData.email}</p>
-          <p>UID: {userData.id}</p>
-          {/* Add more fields as needed */}
-        </div>
-      )}
+      <h1>Twitter Sign Up</h1>
+      {formComponent}
     </div>
   );
 };
