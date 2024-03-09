@@ -14,9 +14,10 @@ const ProfilePhotoForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Upload Profile Photo</h2>
+      <h2>Pick a profile picture</h2>
+      <p>Have a favorite selfie? Upload it now.</p>
       <input type="file" onChange={handlePhotoChange} />
-      <button type="submit">Submit</button>
+      <button type="submit">Skip for now</button>
     </form>
   );
 };

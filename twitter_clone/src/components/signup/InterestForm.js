@@ -2,24 +2,35 @@ import React, { useState } from 'react';
 
 const InterestForm = ({ onSubmit }) => {
   const [interests, setInterests] = useState([]);
+  const [selectedCount, setSelectedCount] = useState(0);
 
   const handleInterestChange = (e) => {
-    const { value } = e.target;
-    setInterests((prevInterests) =>
-      prevInterests.includes(value)
-        ? prevInterests.filter((interest) => interest !== value)
-        : [...prevInterests, value]
-    );
+    const { value, checked } = e.target;
+
+    if (checked) {
+      setSelectedCount((prevCount) => prevCount + 1);
+      setInterests((prevInterests) => [...prevInterests, value]);
+    } else {
+      setSelectedCount((prevCount) => prevCount - 1);
+      setInterests((prevInterests) => prevInterests.filter((interest) => interest !== value));
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(interests);
+    if (selectedCount >= 3) {
+      onSubmit(interests);
+    } else {
+      alert('Please select at least 3 interests.');
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Select Interests</h2>
+      <h2>What do you want to see on Twitter?</h2>
+      <p>
+        Select at least 3 interests to personalize your Twitter experience. They will be visible on your profile.
+      </p>
       <label>
         <input
           type="checkbox"
@@ -47,7 +58,8 @@ const InterestForm = ({ onSubmit }) => {
         />
         Music
       </label>
-      <button type="submit">Submit</button>
+      <p>Selected: {selectedCount}</p>
+      <button type="submit" disabled={selectedCount < 3}>Next</button>
     </form>
   );
 };
