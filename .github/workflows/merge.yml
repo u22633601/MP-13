@@ -1,7 +1,0 @@
-steps:
-    - uses: actions/checkout@v2
-    - uses: emiliopedrollo/auto-merge@v1.2.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        target_branch: 'we will specify'
-        commit_message: 'Branch {target_branch} auto-merged {source_ref}'

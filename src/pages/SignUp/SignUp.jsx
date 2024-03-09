@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { supabase } from "@config/supabase";
+import { loggedInUserStore } from '@store/index';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userData, setUserData] = useState(null); // State to store user data
+  const {userData, loginUser} = loggedInUserStore((state) => { return { userData: state.user, loginUser: state.loginUser}; });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,7 +20,7 @@ const SignUp = () => {
     } else {
       console.log('User signed up:', user);
       console.log(user);
-      setUserData(user); // Update user data state
+      loginUser(user); // Update user data state
     }
   };
 
