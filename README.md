@@ -8,6 +8,8 @@
   <a href="https://github.com/users/u22633601/projects/1">project board</a>
   |
   <a href="https://github.com/u22633601/MP-13/wiki">documentation</a>
+  |
+  <a href="/images/GitFlow_trunk.png">github branching strategy</a>
 </p>
 
 <p align="center">
@@ -20,13 +22,13 @@
 
 </p>
 
-///Badges related to the app can go here <br>
 ///Kyles figma design can go here or a screenshot of the actual web app.
 
 # Table of content
 - [Twitter clone - By MP-13](#twitter-clone---by-mp-13)
 - [Table of content](#table-of-content)
 - [Summary](#summary)
+- [Demo](#demo)
 - [Tech stack](#tech-stack)
 - [Version control and CI/CD](#version-control-and-cicd)
 - [Users](#users)
@@ -36,12 +38,18 @@
 - [The team](#the-team)
 
 # Summary
-A description of what this application is about will go here
+MP-13 - Twitter clone - A description of what this application is about will go here
+
+# Demo
+<a href="">MP-13-Demo1.</a>
+<a href="">Requirement Specification (SRS)</a>
+<a href="">Figma designs</a>
+<a href="">GitHub Project Board</a>
 
 # Tech stack
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=cypress,figma,md,npm,postgres,react,supabase,ts,vercel,vite,vitest&perline=5&theme=light" />
+    <img src="https://skillicons.dev/icons?i=deno,cypress,figma,md,npm,postgres,react,supabase,ts,vercel,vite,vitest&perline=5&theme=light" />
   </a>
 </p>
 
@@ -63,15 +71,22 @@ Please see <a href="CONTRIBUTING.md">contributing</a> for more details on how yo
 
 1. Clone the repository.
 2. Configure and install the dependencies:
-```npm install```.
+```
+npm install
+```
 3. Start up a development server and navigate to the appropriate port:
-```npm run dev```
+```
+npm run dev
+```
 4. To close the development server run
 ```CTRL-C```
-5. To run tests, run ```npm run tests```
+5. To run tests, run 
+```
+npm test
+```
 
 # The team
 
-| Username | Personal Website | Role | Bio |
+| Username | Website | Roles | Bio |
 | ----------- | ----------- | ----------- | ----------- |
 |Person 1| <a href="">link</a>| UI/UX engineer, designer, testing| I enjoy Computer Science|
