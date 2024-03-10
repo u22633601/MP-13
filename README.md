@@ -49,7 +49,7 @@ MP-13 - Twitter clone - A description of what this application is about will go 
 # Tech stack
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=deno,cypress,figma,md,npm,postgres,react,supabase,ts,vercel,vite,vitest&perline=5&theme=light" />
+    <img src="https://skillicons.dev/icons?i=deno,cypress,figma,md,npm,postgres,react,supabase,ts,vercel,vite,vitest&perline=4&theme=light" />
   </a>
 </p>
 
