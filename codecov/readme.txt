@@ -1,1 +1,0 @@
-We can add code coverage reports xml to this folder
